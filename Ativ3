@@ -1,0 +1,33 @@
+01. Faça um programa em C que armazene 15 números inteiros em um vetor NUM e
+imprima uma listagem dos números lidos.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num[15];
+    for(int i= 0;i<=14; i++){
+        printf("Digite um numero: ");
+        scanf("%i",&num[i]);
+    }
+
+    for(int i = 0;i<=14;i++){
+        printf("Numero digitado: %i\n", num[i]);
+    }
+
+
+    return 0;
+}
+
+
+
+02. Crie um programa que leia o preço de compra e o preço de venda de 100 mercado-
+rias (utilize vetores). Ao final, o programa deverá imprimir quantas mercadorias
+proporcionam:
+• lucro < 10%
+• 10% <= lucro <= 20%
+• lucro > 20%
+
+03. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
+para a menor nota e imprima uma relação contendo todas as matrículas e médias.
