@@ -1,0 +1,55 @@
+Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
+para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
+mesmo número de pontos, criar um programa em C que informe se uma equipe
+foi classificada, de acordo com a seguinte especificação:
+• Ler os pontos obtidos por cada jogador da equipe;
+• Mostrar esses valores em ordem decrescente;
+• Se a soma dos pontos for maior do que 100, imprimir a média aritmética
+entre eles, caso contrário, imprimir a mensagem "Equipe desclassificada".
+
+
+#include <stdio.h>
+#include <locale.h>
+
+int compare(const void *a, const void *b){
+    return(*(float*)b - *(float*)a);
+    //essa função server para comparação, usado junto com qsort para assim ter uma lista de forma decrescente,
+}
+
+int main()
+{
+    float soma;
+    float pontos[3];
+
+
+    printf("Insira a pontuação do jogador 1: ");
+    scanf("%f",&pontos[0]);
+
+
+    printf("Insira a pontuação do jogador 2: ");
+    scanf("%f",&pontos[1]);
+
+
+    printf("Insira a pontuação do jogador 3: ");
+    scanf("%f",&pontos[2]);
+
+
+    soma = pontos[0] + pontos[1] + pontos[2];
+
+    qsort(pontos, 3, sizeof(float), compare);
+    // qsort ordem decrescente
+
+    for(int i=0;i<3;i++){
+        printf("descrescente: %f\n",pontos[i]);
+
+    }
+
+    if(soma > 100){
+        float media = soma / 3;
+        printf("media: %f", media);
+    }else{
+        printf("Equipe desclassificada");
+    }
+
+    return 0;
+}
